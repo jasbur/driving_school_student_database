@@ -1,0 +1,23 @@
+<span class="classPaymentsPrintViewLink"><%=link_to "Print view", :action => "print_class_payments", :class_number => @class_number%></span>
+
+<h1 class="classPaymentsH1">Class #<%=@class_number%> Payments</h1>
+
+<table>
+	<th>Name</th> <th>| Program Cost |</th> <th>Amount Due</th>
+	<tr class="listStudentsTableTopRowSpacer"></tr>
+	
+	<%for student in @students do%>
+		<%student_payments = Payment.find_all_by_student_id(student.id)%>
+			
+		<%amount_due = student.program_cost%>
+		
+		<%student_payments.each{|payment|%>
+			<%amount_due = amount_due - payment.amount%>
+		<%}%>
+			
+		<tr><td><%= link_to "#{student.last_name}, #{student.first_name}", :action => "show", :id => student.id %></td>
+			<td class="tableColumnCurrency"><%= link_to "#{number_to_currency(student.program_cost)}", :action => "show", :id => student.id %></td>
+			<td class="tableColumnCurrency"><%= link_to "#{number_to_currency(amount_due)}", :action => "show", :id => student.id %></td></tr>
+		<tr class="listStudentsTableRowSpacer"></tr>
+	<%end%>
+</table>

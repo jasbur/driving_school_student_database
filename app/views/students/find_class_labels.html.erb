@@ -1,0 +1,12 @@
+<h2>Print class labels</h2>
+
+<%= form_tag :action => "print_class_labels" do %>
+	Class #:<%= text_field_tag "query" %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<script type="text/javascript">
+	window.onload = function() {
+	  document.getElementById('query').focus();
+	}
+</script>

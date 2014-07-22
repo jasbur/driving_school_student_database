@@ -1,0 +1,20 @@
+<h2>Print out class cards</h2>
+
+<%= form_tag :action => "print_class_printouts" do %>
+	<div id="searchStudentsRadioButtons">
+		<ul>
+			<li><%=radio_button_tag(:search_type, "classroom_cards", :checked => true)%><%=label_tag(:search_type_last_name, "Classroom cards")%></li>
+			
+			<li><%=radio_button_tag(:search_type, "btw_cards")%><%=label_tag(:search_type_agreement_number, "BTW cards")%></li>
+		</ul>
+	</div>
+	
+	<%= text_field_tag "query" %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<script type="text/javascript">
+	window.onload = function() {
+	  document.getElementById('query').focus();
+	}
+</script>

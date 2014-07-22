@@ -1,0 +1,78 @@
+<h1><%= @student.first_name %> <%= @student.last_name %> student information</h1>
+
+<div id="studentShowNavigation">
+	<ul>
+		<li><%=link_to "Edit", :action => "edit"%></li>
+		<li><%=link_to "Add a payment", :controller => "payments", :action => "new", :student_id => @student.id %></li>
+		<li><%=link_to "Print Classroom", :action => "print_office_record", :student_id => @student.id, :record_type => "classroom" %></li>
+		<li><%=link_to "Print BTW", :action => "print_office_record", :student_id => @student.id, :record_type => "btw" %></li>
+	</ul>
+</div>
+
+<table>
+	<tr><td>First name:</td> <td><%= @student.first_name %></td></tr>
+	<tr><td>Middle initial:</td> <td><%= @student.middle_initial %></td></tr>
+	<tr><td>Last name:</td> <td><%= @student.last_name %></td></tr>
+	<tr><td>Male/Female:</td> <td><%= @student.sex %></td></tr>
+	<tr><td>Street address:</td> <td><%= @student.street_address %></td></tr>
+	<tr><td>City:</td> <td><%= @student.city %></td></tr>
+	<tr><td>State:</td> <td><%= @student.state %></td></tr>
+	<tr><td>Zip code:</td> <td><%= @student.zip_code %></td></tr>
+	<tr><td>Phone 1:</td> <td><%= @student.phone_1 %></td></tr>
+	<tr><td>Phone 2:</td> <td><%= @student.phone_2 %></td></tr>
+	<tr><td>DOB:</td> <td><%= if @student.dob; @student.dob.strftime("%m/%d/%Y"); end %></td></tr>
+	<tr class = "blankTableRowSpacer"></tr>
+	
+	<tr><td>Start date:</td> <td><%= if @student.start_date; @student.start_date.strftime("%m/%d/%Y"); end %></td></tr>
+	<tr><td>Finish date:</td> <td><%= if @student.finish_date; @student.finish_date.strftime("%m/%d/%Y"); end %></td></tr>
+	<tr><td>Agreement #:</td> <td><%= @student.agreement_number %></td></tr>
+	<tr><td>DL #:</td> <td><%= @student.dl_number %></td></tr>
+	<tr><td>Temps #:</td> <td><%= @student.temps_number %></td></tr>
+	<tr><td>Temps issued:</td> <td><%= if @student.temps_issued; @student.temps_issued.strftime("%m/%d/%Y"); end %></td></tr>
+	<tr><td>Class #:</td> <td><%= @student.class_number %></td></tr>
+	
+	<%if @student.electronically_filed == true%>
+		<tr><td>Electronically filed (Y/N):</td> <td>Y</td></tr>
+	<%else%>
+		<tr><td>Electronically filed (Y/N):</td> <td>N</td></tr>
+	<%end%>
+	
+	<tr class = "blankTableRowSpacer"></tr>
+	
+	<tr><td>Program cost:</td> <td><%= number_to_currency(@student.program_cost) %></td></tr>
+	<tr class = "paymentTableRowSpacer"></tr>
+		
+	<tr><td>Payments:</td> <td></td></tr>
+	<% @payments.each{|payment| %>
+		<tr><td></td> <td><%= number_to_currency(payment.amount) %> <span class="paymentListInfo">#<%= payment.receipt_number %> (<%= payment.payment_date.strftime("%m/%d/%Y") %>)</span>
+			
+			<div id="paymentModButtons">
+				<%= button_to "Edit payment", {:controller => "payments", :action => "edit", :id => payment.id}, :class => "editButton", :method => "get" %>
+				
+				<%= button_to "Delete payment", {:controller => "payments", :action => "destroy", :id => payment.id },
+													:class => "deleteButton",
+													:method => "delete", 
+													:confirm => "Are you sure you want to delete the #{number_to_currency(payment.amount)} payment for #{@student.first_name} #{@student.last_name}?" %>
+			</div>
+			
+		</td></tr>
+		<tr class = "paymentTableRowSpacer"></tr>
+	<% } %>
+	
+	<tr><td>Amount Due:</td> <td><%= number_to_currency(@amount_due) %></td></tr>
+	<tr class = "blankTableRowSpacer"></tr>
+	
+	<tr><td>Behind the wheel instructor:</td> <td><%= @student.behind_the_wheel_instructor %></td></tr>
+	<tr><td>Date inst. assigned:</td> <td><%= if @student.date_instructor_assigned; @student.date_instructor_assigned.strftime("%m/%d/%Y"); end %></td></tr>
+	<tr><td>School attend:</td> <td><%= @student.school_attend %></td></tr>
+	<tr><td>Classroom location:</td> <td><%= @student.classroom_location %></td></tr>
+	<tr><td>Classroom instructor:</td> <td><%= @student.classroom_instructor %></td></tr>
+	<tr><td>Type:</td> <td><%= @student.student_type %></td></tr>
+	<tr class = "blankTableRowSpacer"></tr>
+	
+	<tr><td>Notes:</td> <td><%= @student.notes %></td></tr>
+	
+	<tr class = "blankTableRowSpacer"></tr>
+	
+	<tr><td><%= button_to "Delete student record", {:controller => :students, :action => "destroy", :id => @student.id }, :method => :delete, :confirm => "Are you sure you want to PERMANENTLY delete #{@student.first_name} #{@student.last_name}?" %></td> <td></td></tr>
+</table>

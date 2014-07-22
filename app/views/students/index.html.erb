@@ -1,0 +1,10 @@
+<div class="indexNavigationLinks">
+	<ul>
+	    <li><%= link_to 'Create a new student', :action => 'new'%></li>
+	    <li><%= link_to "Lookup a student", :action => "search" %></li>
+	    <li><%= link_to "Lookup class payments", :action => "find_class_payments" %></li>
+	    <li><%= link_to "Print class cards", :action => "find_class_printouts" %></li>
+	    <li><%= link_to "Print address labels", :action => "find_class_labels" %></li>
+	    <li><%= link_to 'Show all students', :action => 'list_students', :query => 'all' %></li>
+	</ul>
+</div>

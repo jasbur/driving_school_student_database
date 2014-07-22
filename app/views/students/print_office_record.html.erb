@@ -1,0 +1,7 @@
+<%= stylesheet_link_tag    "print_view", :media => "all" %>
+
+<%if @record_type == "classroom"%>
+	<%=render partial: "classroom_record", :student => @student%>
+<%else%>
+	<%=render partial: "btw_record", :student => @student%>
+<%end%>

@@ -1,0 +1,48 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+
+body ul{
+	list-style: none;
+}
+
+div#classPaymentsPrintContainer{
+	border: 1px solid #fff;
+	width: 700px;
+	height: 913px;
+}
+
+div#reportInformationList {
+	margin: 0px 0px 0px -31px;
+	font-size: .8em;
+}
+
+div#classPaymentsPrintContainer h1 {
+	font-size: 1.3em;
+	text-align: center;
+	width: 377px;
+	margin: 0px 0px 29px 164px;
+}
+
+div#classPaymentsPrintContainer th {
+	width: 106px;
+	padding: 0px 0px 11px 0px;
+}
+
+div#classPaymentsPrintContainer table {
+	margin: 0px 0px 0px 132px;
+	font-size: 12px;
+}
+
+.headerName{
+	text-align: left;
+}
+
+.currencyColumn{
+	text-align: right;
+}
+
+.bottomTotalRowSpacer{
+	height: 13px;
+}

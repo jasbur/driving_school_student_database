@@ -1,0 +1,26 @@
+<h2>Search for students by:</h2>
+
+<%= form_tag :action => "list_students" do %>
+	<div id="searchStudentsRadioButtons">
+		<ul>
+			<li><%=radio_button_tag(:search_type, "last_name", :checked => true)%><%=label_tag(:search_type_last_name, "Last Name")%></li>
+			
+			<li><%=radio_button_tag(:search_type, "agreement_number")%><%=label_tag(:search_type_agreement_number, "Agreement Number")%></li>
+				
+			<li><%=radio_button_tag(:search_type, "classroom_instructor")%><%=label_tag(:search_type_classroom_instructor, "Classrom instructor")%></li>
+				
+			<li><%=radio_button_tag(:search_type, "btw_instructor")%><%=label_tag(:search_type_btw_instructor, "BTW instructor")%></li>
+				
+			<li><%=radio_button_tag(:search_type, "phone_number")%><%=label_tag(:search_type_last_name, "Phone #")%></li>
+		</ul>
+	</div>
+	
+	<%= text_field_tag "query" %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<script type="text/javascript">
+	window.onload = function() {
+	  document.getElementById('query').focus();
+	}
+</script>

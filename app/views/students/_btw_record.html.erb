@@ -1,0 +1,70 @@
+<div id="officeRecordContainer">
+	
+	<div id="officeRecordHeader">
+		<h1>STUDENT'S OFFICIAL OFFICE RECORD</h1>
+		
+		<h3>FOR THE STATE OF WISCONSIN</h3>
+		<h3>AND THE MOTOR VEHICLE DEPARTMENT</h3>
+		
+		<h2>B.T.W.</h2>
+	</div>
+	
+	<div id="printClassInstructorArea">
+		<table>
+			<tr><td>BTW</td> <td class="printInstructorLabelRight">Instructor</td></tr>
+		</table>
+	</div>
+	
+	<div id="printAgreementSection">
+		<table>
+			<tr><td>Agreement#</td> <td><%=@student.agreement_number%></td></tr>
+		</table>
+	</div>
+	
+	<div id="printStudentInformationArea">
+		<table>
+			<tr><td class="printStudentInformationAreaLeft"><%=@student.first_name%> <%=@student.middle_initial%> <%=@student.last_name%></td> <td><%=@student.phone_1%> <%=@student.phone_2%></td></tr>
+			<tr><td><%=@student.street_address%></td> <td><%=@student.city%> <%=@student.zip_code%></td></tr>
+			
+            <%if @student.temps_number == ""%>
+                <tr><td>X000-0000-0000-00 <%=@student.sex.upcase%></td> <td><%=if @student.dob; @student.dob.strftime("%m/%d/%Y"); end%></td></tr>
+            <%else%>
+                <tr><td><%=@student.temps_number%> <%=@student.sex.upcase%></td> <td><%=if @student.dob; @student.dob.strftime("%m/%d/%Y"); end%></td></tr>
+            <%end%>
+            
+			<tr><td>Temps Issue Date: <%=if @student.temps_issued; @student.temps_issued.strftime("%m/%d/%Y"); end%></td> <td><%=@student.school_attend%></td></tr>
+		</table>
+	</div>
+	
+	<div id="btwPrintViewMiddleTable">
+		<table>
+			<tr><td class="btwPrintViewMiddleTableExpirationDate">Expiration Date:</td></tr>
+		</table>
+		
+		<table>
+			<tr><td class="btwPrintViewMiddleTableNotes">Notes:</td></tr>
+		</table>
+	</div>
+	
+	<div id="btwPrintBottomChartArea">
+		<table>
+			<tr><th class="printUpperLeftTableHeader"></th> <th class="btwPrintChartColumnHeader">DATE</th> <th class="btwPrintChartColumnHeader">BTW</th> <th class="btwPrintChartColumnHeader">OBS. WORK</th> <th class="btwPrintChartColumnHeader">VEH.</th> <th class="btwPrintChartColumnHeader">RECT. NO.</th> <th class="btwPrintChartColumnHeader">INST.</th> <th class="btwPrintChartColumnHeader">AMT. PD.</th> <th class="btwPrintChartColumnHeader">BAL. DUE</th></tr>
+			<tr><td class="btwPrintLeftMostColumn">1</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">2</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">3</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">4</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">5</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">6</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">7</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">8</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">9</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">10</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">11</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">12</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">13</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">14</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
+			<tr><td class="btwPrintLeftMostColumn">15</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td></tr>	
+		</table>
+	</div>
+
+</div>

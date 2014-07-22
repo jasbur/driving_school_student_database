@@ -1,0 +1,181 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+	font-family: sans-serif;
+    background-color: #2A26AF;
+	margin: 0;
+	padding: 0;
+	color: #ffffff;
+}
+
+body a{
+	color: #ffffff;
+}
+
+body a:visited{
+	color: #ffffff;
+}
+
+body ul{
+	list-style: none;
+}
+
+body td{
+	padding: 0px 23px 0px 0px;
+}
+
+input{
+	border-radius: 6px;
+	min-width: 200px;
+	padding: 5px 15px 5px 15px;
+	font-size: .6em;
+}
+
+input[type=checkbox] {
+	height: 25px;
+}
+
+input[type=radio] {
+	height: 16px;
+	margin: 0px -68px 0px -78px;
+}
+
+textarea {
+	border-radius: 6px;
+	width: 390px;
+	height: 151px;
+	padding: 5px 15px 5px 15px;
+	font-size: .6em;
+}
+
+select {
+	font-size: .6em;
+	margin: 4px 0px 4px 0px;
+	width: 233px;
+	height: 37px;
+}
+
+header {
+	font-family: monospace;
+	border: 13px solid #FFFFFF;
+	border-top: none;
+	padding: 11px 0px 0px 47px;
+	height: 193px;
+}
+
+.mainHeaderLogo {
+	width: 250px;
+	padding: 10px;
+	background-color: #DADADA;
+	border: 5px solid #ffffff;
+}
+
+.headerTitle {
+	font-size: 3em;
+	margin: -38px 0px 0px 305px;
+}
+
+.flashNotice {
+	padding: 15px 0px 15px 32px;
+	margin: 0px 0px 21px 0px;
+	background-color: #ffffff;
+	color: #000000;
+	font-weight: bold;
+}
+
+div#mainContent {
+	font-family: monospace;
+	font-size: 2em;
+	margin: 31px 50px 0px 50px;
+	padding: 22px 0px 22px 115px;
+	border: 13px solid #ffffff;
+}
+
+.indexNavigationLinks {
+	font-size: 1.8em;
+}
+
+.indexNavigationLinks li {
+	margin: 0px 0px 37px 0px;
+}
+
+.blankTableRowSpacer{
+	height: 75px;
+}
+
+.paymentListInfo{
+	font-size: .7em;
+}
+
+.paymentTableRowSpacer{
+	height: 35px;
+}
+
+div#studentShowNavigation {
+	float: left;
+	margin: -8px 53px 0px -148px;
+	font-size: .6em;
+}
+
+div#paymentModButtons {
+	width: 331px;
+	height: 35px;
+	margin: 12px 0px 0px 0px;
+}
+
+.editButton {
+	float: left;
+	height: 35px;
+	min-width: 142px;
+	border: 5px solid #DADADA;
+	border-radius: 10px;
+	background-color: #5E6092;
+	font-weight: bolder;
+	font-size: .5em;
+	color: #fff;
+}
+
+.deleteButton {
+	float: left;
+	height: 35px;
+	min-width: 158px;
+	margin: 0px 0px 0px 27px;
+	border: 5px solid #DADADA;
+	border-radius: 10px;
+	background-color: #C81E1E;
+	font-weight: bolder;
+	font-size: .5em;
+	color: #fff;
+}
+
+.listStudentsTableTopRowSpacer {
+	height: 16px;
+}
+
+.listStudentsTableRowSpacer {
+	height: 11px;
+}
+
+.tableColumnCurrency{
+	text-align: right;
+}
+
+.classPaymentsPrintViewLink{
+	font-size: .6em;
+}
+
+.classPaymentsH1 {
+	margin: 18px 0px 25px 55px;
+}

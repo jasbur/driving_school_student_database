@@ -1,0 +1,9 @@
+<table>
+	<%= form_for @payment do |f| %>
+		<tr><td>Payment amount:</td> <td>$<%= f.text_field :amount, :id => "amount" %></td></tr>
+		<tr><td>Payment date (DD/MM/YYYY):</td> <td><%= f.text_field :payment_date %></td></tr>
+		<tr><td>Receipt #:</td> <td><%= f.text_field :receipt_number %></td></tr>
+		
+		<tr><td></td> <td><%= f.submit "Update payment" %></td></tr>
+	<% end %>
+</table>

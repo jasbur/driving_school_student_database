@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag    "print_view", :media => "all" %>
+
+<%if @students.size == 0%>
+
+<h1>No students found in class <%=@query%></h1>
+
+<%else%>
+
+    <%for @student in @students do%>
+        <%if @search_type == "classroom_cards"%>
+            <%=render partial: "classroom_record", :student => @student%>
+        <%elsif @search_type == "btw_cards"%>
+            <%=render partial: "btw_record", :student => @student%>
+        <%end%>
+    <%end%>
+
+<%end%>
+
+
+
+
+
+
+
+

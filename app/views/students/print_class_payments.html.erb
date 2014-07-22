@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag "class_payments", :media => "all" %>
+
+<div id="classPaymentsPrintContainer">
+	<div id="reportInformationList">
+		<ul>
+			<li>Date: <%=Time.now.to_date%></li>
+			<li>Class #: <%=@class_number%></li>
+			<li>Location: <%=@students.first.classroom_location%></li>
+		</ul>
+	</div>
+	
+	
+	<h1>Driving School, Inc.</h1>
+	
+	<table>
+		<th class="headerName">First</th> <th class="headerName">Last</th> <th class="currencyColumn">Program Cost</th> <th class="currencyColumn">Amount Due</th>
+		
+		<%for student in @students do%>
+			<%student_payments = Payment.find_all_by_student_id(student.id)%>
+			<%amount_due = student.program_cost%>
+			
+			<%student_payments.each{|payment|%>
+				<%amount_due = amount_due - payment.amount%>
+			<%}%>
+		
+			<tr><td><%=student.first_name%></td> <td><%=student.last_name%></td> <td class="currencyColumn"><%=number_to_currency(student.program_cost)%></td> <td class="currencyColumn"><%=number_to_currency(amount_due)%></td></tr>
+		<%end%>
+	</table>
+</div>

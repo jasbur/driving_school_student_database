@@ -1,0 +1,17 @@
+<h2>Add payment for <%= @student.first_name %> <%= @student.last_name %></h2>
+
+<%= form_for @payment do |f| %>
+	<table>
+		<tr><td>Payment amount:</td> <td>$<%= f.text_field :amount, :id => "amount" %></td></tr>
+		<tr><td>Payment date (DD/MM/YYYY):</td> <td><%= f.text_field :payment_date %></td></tr>
+		<tr><td>Receipt #:</td> <td><%= f.text_field :receipt_number %></td></tr>
+		<%= f.hidden_field :student_id, :value => @student.id %>
+		<tr><td></td> <td><%= f.submit 'Add payment' %></td></tr>
+	</table>
+<%end%>
+
+<script type="text/javascript">
+	window.onload = function() {
+	  document.getElementById('amount').focus();
+	}
+</script>

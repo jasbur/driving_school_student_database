@@ -1,0 +1,45 @@
+<table>
+	<%= form_for @student do |f| %>
+		<tr><td>First name:</td> <td><%= f.text_field :first_name %></td></tr>
+		<tr><td>Middle initial:</td> <td><%= f.text_field :middle_initial %></td></tr>
+		<tr><td>Last name:</td> <td><%= f.text_field :last_name %></td></tr>
+		<tr><td>DOB (MM/DD/YYYY):</td> <td><%= f.text_field :dob %></td></tr>
+		<tr><td>Male/Female:</td> <td><%= f.select :sex, options_for_select([["Unspecified", "Unspecified"], 
+																			["Male", "Male"], 
+																			["Female", "Female"]], "Unspecified") %></td></tr>
+		<tr><td>Street address:</td> <td><%= f.text_field :street_address %></td></tr>
+		<tr><td>City:</td> <td><%= f.text_field :city %></td></tr>
+		<tr><td>State:</td> <td><%= f.text_field :state %></td></tr>
+		<tr><td>Zip code:</td> <td><%= f.text_field :zip_code %></td></tr>
+		<tr><td>Phone 1:</td> <td><%= f.text_field :phone_1 %></td></tr>
+		<tr><td>Phone 2:</td> <td><%= f.text_field :phone_2 %></td></tr>
+		<tr class = "blankTableRowSpacer"></tr>
+		
+		<tr><td>Start date (MM/DD/YYYY):</td> <td><%= f.text_field :start_date %></td></tr>
+		<tr><td>Agreement #:</td> <td><%= f.text_field :agreement_number %></td></tr>
+		<tr><td>Temps #:</td> <td><%= f.text_field :temps_number %></td></tr>
+		<tr><td>Temps issued (MM/DD/YYYY):</td> <td><%= f.text_field :temps_issued %></td></tr>
+		<tr><td>Class #:</td> <td><%= f.text_field :class_number %></td></tr>
+		<tr class = "blankTableRowSpacer"></tr>
+		
+		<tr><td>Program cost:</td> <td>$<%= f.text_field :program_cost, :value => "0.00" %></td></tr>
+		<tr class = "blankTableRowSpacer"></tr>
+		
+		<tr><td>Behind the wheel instructor:</td> <td><%= f.text_field :behind_the_wheel_instructor %></td></tr>
+		<tr><td>Date instructor assigned (MM/DD/YYYY):</td> <td><%= f.text_field :date_instructor_assigned %></td></tr>
+		<tr><td>School attend:</td> <td><%= f.text_field :school_attend %></td></tr>
+		<tr><td>Classroom location:</td> <td><%= f.text_field :classroom_location %></td></tr>
+		<tr><td>Classroom instructor:</td> <td><%= f.text_field :classroom_instructor %></td></tr>
+		<tr><td>Student type:</td> <td><%= f.select :student_type, options_for_select([["Classroom only", "Classroom only"], ["Behind the wheel", "Behind the wheel"], ["Both", "Both"]], "Both") %></td></tr>
+		<tr class = "blankTableRowSpacer"></tr>
+		
+		<tr><td>Notes:</td> <td><%= f.text_area :notes %></td></tr>
+		<tr><td></td> <td><%= f.submit 'Create student' %></td></tr>
+	<% end %>
+</table>
+
+<script type="text/javascript">
+	window.onload = function() {
+	  document.getElementById('student_first_name').focus();
+	}
+</script>

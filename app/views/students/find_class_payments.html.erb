@@ -1,0 +1,12 @@
+<h2>Find class Payments</h2>
+
+<%= form_tag :action => "list_class_payments" do %>
+	Class #:<%= text_field_tag "query" %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<script type="text/javascript">
+	window.onload = function() {
+	  document.getElementById('query').focus();
+	}
+</script>

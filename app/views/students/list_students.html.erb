@@ -1,0 +1,20 @@
+<table>
+	<th>Name</th> <th>Address</th> <th>Phone Number</th> <th></th>
+	<tr class="listStudentsTableTopRowSpacer"></tr>
+	
+	<%for student in @students do%>
+		<tr><td><%= link_to "#{student.last_name}, #{student.first_name}", :action => "show", :id => student.id %></td>
+			<td><%= link_to "#{student.street_address}", :action => "show", :id => student.id %></td>
+			<td><%= link_to "#{student.phone_1}", :action => "show", :id => student.id %></td>
+			<td><%= button_to "Delete", 
+					{:controller => :students, 
+						:action => "destroy", 
+						:id => student.id,
+						:search_type => @search_type,
+						:query => @query },
+						:class => "deleteButton", 
+						:method => :delete, 
+						:confirm => "Are you sure you want to PERMANENTLY delete #{student.first_name} #{student.last_name}?" %></td></tr>
+		<tr class="listStudentsTableRowSpacer"></tr>
+	<%end%>
+</table>

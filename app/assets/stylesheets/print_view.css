@@ -1,0 +1,151 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+div#officeRecordContainer {
+	width: 700px;
+	height: 920px;
+	font-family: sans-serif;
+}
+
+div#officeRecordHeader {
+	text-align: center;
+	font-size: .7em;
+}
+
+div#officeRecordHeader h1{
+	margin: 0;
+}
+
+div#officeRecordHeader h2{
+	margin: 0;
+}
+
+div#officeRecordHeader h3{
+	margin: 0;
+}
+
+div#printClassInstructorArea {
+	float: left;
+	width: 265px;
+	border-top: 1px solid #000;
+	margin: 29px 0px 0px 0px;
+	font-family: serif;
+}
+
+.printInstructorLabelRight {
+	padding: 0px 0px 0px 73px;
+}
+
+div#printAgreementSection {
+	float: right;
+	margin: -25px 0px 0px 0px;
+	font-family: serif;
+}
+
+div#printAgreementSection td {
+	font-size: .9em;
+}
+
+.printPerRegEntry{
+	border-bottom: 1px solid #000;
+	width: 75px;
+}
+
+div#printStudentInformationArea {
+	margin: 101px 0px 0px 27px;
+	font-family: serif;
+}
+
+.printStudentInformationAreaLeft {
+	width: 459px;
+}
+
+div#printBottomChartArea {
+	margin: 34px 0px 0px 0px;
+}
+
+div#printBottomChartArea table {
+	border: 1px solid #000;
+	border-collapse: collapse;
+}
+
+div#printBottomChartArea td {
+	border: 1px solid #000;
+}
+
+.classroomPrintChartColumnHeader {
+	border: 1px solid #000;
+	width: 53px;
+	text-align: center;
+	padding: 0px 5px 0px 5px;
+}
+
+.printUpperLeftTableHeader{
+	width: 27px;
+}
+
+.classroomPrintLeftMostColumn {
+	text-align: center;
+	height: 36px;
+}
+
+div#classroomPrintRightOptionsColumn {
+	float: right;
+	margin: 46px 29px 0px 0px;
+}
+
+.classroomPrintRightOptionsColumnEmptyBox {
+	border: 1px solid #000;
+	height: 39px;
+}
+
+.classroomPrintRightOptionsColumnSpacer {
+	height: 5px;
+}
+
+div#btwPrintViewMiddleTable table{
+	border-collapse: collapse;	
+}
+
+div#btwPrintViewMiddleTable td{
+	border: 1px solid #000;
+}
+
+.btwPrintViewMiddleTableExpirationDate {
+	vertical-align: top;
+	width: 188px;
+	height: 52px;
+}
+
+.btwPrintViewMiddleTableNotes {
+	text-align: left;
+	vertical-align: top;
+	width: 696px;
+	height: 80px;
+}
+
+div#btwPrintBottomChartArea {
+	margin: 5px 0px 0px 0px;
+}
+
+div#btwPrintBottomChartArea table {
+	border: 1px solid #000;
+	border-collapse: collapse;
+}
+
+div#btwPrintBottomChartArea td {
+	border: 1px solid #000;
+}
+
+.btwPrintLeftMostColumn {
+	height: 31px;
+}
+
+.btwPrintChartColumnHeader {
+	border: 1px solid #000;
+	width: 67px;
+	text-align: center;
+	padding: 0px 5px 0px 5px;
+}

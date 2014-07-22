@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag "class_labels", :media => "all" %>
+
+<div id="classLabelsContainer">
+	
+	<table>
+		<%row_counter = 3%>
+		<%labels_printed = 0%>
+		
+		<%for student in @students do%>
+			<%labels_printed = labels_printed + 1%>
+		
+			<%if row_counter % 3 == 0%>
+				<tr>
+			<%end%>
+			
+			<td>
+				<ul>
+					<li><%=student.first_name%> <%=student.last_name%></li>
+					<li><%=student.street_address%></li>
+					<li><%=student.city%> <%=student.state%> <%=student.zip_code%></li>
+				</ul>
+			</td>
+			
+			<%if labels_printed % 3 == 0%>
+				</tr>
+				<tr class="classLabelsSpacerRow"></tr>
+			<%end%>
+			
+			<%row_counter = row_counter + 1%>
+		<%end%>
+	</table>
+	
+</div>
