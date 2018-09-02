@@ -1,5 +1,26 @@
-<ul>
-	<% @payments.each{|payment|%>
-		<li><%= link_to "$#{payment.amount}", :action => "show", :id => payment.id %></li>
-	<%}%>
-</ul>
+<% payment_total = 0 %>
+
+<table>
+	<th>Number</th> <th>Date</th> <th>Student</th> <th>Amount</th> <th></th>
+	<tr class="listStudentsTableTopRowSpacer"></tr>
+
+	<%for payment in @payments do%>
+		<% payment_total = payment_total + payment.amount %>
+		<tr><td><%= payment.receipt_number %></td>
+				<td><%= payment.payment_date.strftime("%m/%d/%Y") %></td>
+
+				<% if payment.student %>
+					<td><%= link_to("#{payment.student.last_name[0..10]}", :controller => 'students', :action => 'show', :id => payment.student.id) %></td>
+				<% else %>
+					<td></td>
+				<% end %>
+
+				<td><%= number_to_currency(payment.amount) %></td>
+		</tr>
+		<tr class="listStudentsTableRowSpacer"></tr>
+	<%end%>
+	<tr class="listPaymentsTableRowSpacer"></tr>
+	<tr>
+		<td>Total:</td><td></td><td></td><td><%= number_to_currency(payment_total) %></td>
+	</tr>
+</table>

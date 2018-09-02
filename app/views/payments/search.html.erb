@@ -1,4 +1,20 @@
+<h2>Search for payments by:</h2>
+
 <%= form_tag :action => "list_payments" do %>
-	Enter payment amount: $<%= text_field_tag "query" %>
+	<div id="searchStudentsRadioButtons">
+		<ul>
+			<li><%=radio_button_tag(:search_type, "receipt_number", :checked => true)%><%=label_tag(:search_type_receipt_id, "Receipt Number")%></li>
+			<li><%=radio_button_tag(:search_type, "receipt_amount")%><%=label_tag(:search_type_receipt_id, "Payment Amount")%></li>
+			<li><%=radio_button_tag(:search_type, "payment_date")%><%=label_tag(:search_type_receipt_id, "Payment Date Range (MM/DD/YYYY-MM/DD/YYYY)")%></li>
+		</ul>
+	</div>
+
+	<%= text_field_tag "query" %>
 	<%= submit_tag "Search" %>
 <% end %>
+
+<script type="text/javascript">
+	window.onload = function() {
+	  document.getElementById('query').focus();
+	}
+</script>

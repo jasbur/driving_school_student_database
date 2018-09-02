@@ -1,5 +1,6 @@
 class Student < ActiveRecord::Base
   # attr_accessible :title, :body
+  has_many :payments
 
   validates :first_name, :last_name, :presence => true
 
@@ -20,13 +21,13 @@ class Student < ActiveRecord::Base
 
     return amount_due
   end
-  
+
   # Converts and American style date string (DD/MM/YYYY) to ISO standard (YYYY/MM/DD)
   def self.parse_american_date(date_string)
     month = date_string.split(/[-\/]/)[0]
     day = date_string.split(/[-\/]/)[1]
     year = date_string.split(/[-\/]/)[2]
-    
+
     parsed_date_string = "#{year}/#{month}/#{day}"
   end
 
@@ -37,7 +38,7 @@ class Student < ActiveRecord::Base
     file.each{|line|
         s = Student.new
 
-        
+
         s.street_address = line.split(",")[7]
         s.city = line.split(",")[8]
         s.state = line.split(",")[9]
@@ -70,7 +71,7 @@ class Student < ActiveRecord::Base
 
 
         # Parsing and insertion of the above student's payment information
-        
+
         # Finds the student saved above so its ID can be used when saving the payments below
         saved_student = Student.find(:last)
 
@@ -79,90 +80,90 @@ class Student < ActiveRecord::Base
             p1 = Payment.new
             p1.student_id = saved_student.id
             p1.amount = line.split(",")[15]
-            
+
             # If no payment date was entered in the old database give it a default value of 1969/01/01
             if line.split(",")[24] == ""
                 p1.payment_date = "1969/01/01"
             else
                 p1.payment_date = parse_american_date(line.split(",")[24])
             end
-            
+
             # If no receipt number was entered in the old database give it a default value of 00000
             if line.split(",")[20] == ""
                 p1.receipt_number = "00000"
             else
                 p1.receipt_number = line.split(",")[20]
             end
-            
+
             p1.save
         end
-        
+
         # Iterate through the second of four payments from the exisitng "old" database
         unless line.split(",")[16] == ""
             p2 = Payment.new
             p2.student_id = saved_student.id
             p2.amount = line.split(",")[16]
-            
+
             # If no payment date was entered in the old database give it a default value of 1969/01/01
             if line.split(",")[25] == ""
                 p2.payment_date = "1969/01/01"
             else
                 p2.payment_date = parse_american_date(line.split(",")[25])
             end
-            
+
             # If no receipt number was entered in the old database give it a default value of 00000
             if line.split(",")[21] == ""
                 p2.receipt_number = "00000"
             else
                 p2.receipt_number = line.split(",")[21]
             end
-            
+
             p2.save
         end
-        
+
         # Iterate through the third of four payments from the exisitng "old" database
         unless line.split(",")[17] == ""
             p3 = Payment.new
             p3.student_id = saved_student.id
             p3.amount = line.split(",")[17]
-            
+
             # If no payment date was entered in the old database give it a default value of 1969/01/01
             if line.split(",")[26] == ""
                 p3.payment_date = "1969/01/01"
             else
                 p3.payment_date = parse_american_date(line.split(",")[26])
             end
-            
+
             # If no receipt number was entered in the old database give it a default value of 00000
             if line.split(",")[22] == ""
                 p3.receipt_number = "00000"
             else
                 p3.receipt_number = line.split(",")[22]
             end
-            
+
             p3.save
         end
-        
+
         # Iterate through the fourth of four payments from the exisitng "old" database
         unless line.split(",")[18] == ""
             p4 = Payment.new
             p4.student_id = saved_student.id
             p4.amount = line.split(",")[18]
-            
+
             # If no payment date was entered in the old database give it a default value of 1969/01/01
             if line.split(",")[27] == ""
                 p4.payment_date = "1969/01/01"
             else
                 p4.payment_date = parse_american_date(line.split(",")[27])
             end
-            
+
             # If no receipt number was entered in the old database give it a default value of 00000
             if line.split(",")[23] == ""
                 p4.receipt_number = "00000"
             else
                 p4.receipt_number = line.split(",")[23]
             end
-            
+
             p4.save
         end
 

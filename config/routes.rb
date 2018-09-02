@@ -5,7 +5,7 @@ DriversEdDatabase::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
-  
+
   match 'students/list_students' => 'students#list_students'
   match 'students/search' => 'students#search'
   match 'students/print_office_record' => 'students#print_office_record'
@@ -16,6 +16,8 @@ DriversEdDatabase::Application.routes.draw do
   match 'students/print_class_payments' => 'students#print_class_payments'
   match 'students/find_class_printouts' => 'students#find_class_printouts'
   match 'students/print_class_printouts' => 'students#print_class_printouts'
+  match 'payments/search' => 'payments#search'
+  match 'payments/list_payments' => 'payments#list_payments'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
@@ -23,7 +25,7 @@ DriversEdDatabase::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-    
+
     resources :payments
     resources :students
 
