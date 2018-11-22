@@ -6,6 +6,7 @@ body{
 div#officeRecordContainer {
 	width: 700px;
 	height: 920px;
+	margin: 0 0 35px 0;
 	font-family: sans-serif;
 }
 
@@ -24,6 +25,14 @@ div#officeRecordHeader h2{
 
 div#officeRecordHeader h3{
 	margin: 0;
+}
+
+div#printClassInstructorData{
+	margin: 9px 0 -28px 0;
+}
+
+div#printClassInstructorData td{
+	padding: 0 72px 0 0;
 }
 
 div#printClassInstructorArea {
@@ -62,28 +71,29 @@ div#printStudentInformationArea {
 	width: 459px;
 }
 
-div#printBottomChartArea {
-	margin: 34px 0px 0px 0px;
+div#classroomPrintBottomChartArea {
+	margin: 10px 0px 0px 0px;
 }
 
-div#printBottomChartArea table {
+div#classroomPrintBottomChartArea table {
+	width: 100%;
 	border: 1px solid #000;
 	border-collapse: collapse;
 }
 
-div#printBottomChartArea td {
+div#classroomPrintBottomChartArea td {
 	border: 1px solid #000;
+	max-width: 61px;
+	font-size: 0.8em;
+	text-align: center;
 }
 
 .classroomPrintChartColumnHeader {
 	border: 1px solid #000;
 	width: 53px;
 	text-align: center;
+	font-size: 0.8em;
 	padding: 0px 5px 0px 5px;
-}
-
-.printUpperLeftTableHeader{
-	width: 27px;
 }
 
 .classroomPrintLeftMostColumn {
@@ -91,22 +101,19 @@ div#printBottomChartArea td {
 	height: 36px;
 }
 
-div#classroomPrintRightOptionsColumn {
-	float: right;
-	margin: 46px 29px 0px 0px;
+div#classroomTotalsArea td{
+	padding: 2px 12px 2px 0;
+	text-align: right;
+	font-size: 0.8em;
 }
 
-.classroomPrintRightOptionsColumnEmptyBox {
-	border: 1px solid #000;
-	height: 39px;
-}
-
-.classroomPrintRightOptionsColumnSpacer {
-	height: 5px;
+.classroomTotalsAreaBuffer{
+	padding: 0 0 0 35px;
+	font-weight: bold;
 }
 
 div#btwPrintViewMiddleTable table{
-	border-collapse: collapse;	
+	border-collapse: collapse;
 }
 
 div#btwPrintViewMiddleTable td{
@@ -131,6 +138,7 @@ div#btwPrintBottomChartArea {
 }
 
 div#btwPrintBottomChartArea table {
+	width: 100%;
 	border: 1px solid #000;
 	border-collapse: collapse;
 }
@@ -139,13 +147,30 @@ div#btwPrintBottomChartArea td {
 	border: 1px solid #000;
 }
 
+.btwPrintChartColumnHeader {
+	border: 1px solid #000;
+	width: 67px;
+	font-size: 0.8em;
+	text-align: center;
+	padding: 0px 5px 0px 5px;
+}
+
 .btwPrintLeftMostColumn {
 	height: 31px;
 }
 
-.btwPrintChartColumnHeader {
-	border: 1px solid #000;
-	width: 67px;
+.btwPrintHoursTotalColumn {
+	height: 20px;
+}
+
+.btwPrintHoursData {
+	padding: 0 4px 0 4px;
+	font-size: 0.6em;
 	text-align: center;
-	padding: 0px 5px 0px 5px;
+	font-weight: bold;
+}
+
+.btwPrintSessionData {
+	padding: 0 4px 0 4px;
+  font-size: 0.49em;
 }

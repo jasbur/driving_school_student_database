@@ -5,7 +5,8 @@
 		<ul>
 			<li><%=radio_button_tag(:search_type, "receipt_number", :checked => true)%><%=label_tag(:search_type_receipt_id, "Receipt Number")%></li>
 			<li><%=radio_button_tag(:search_type, "receipt_amount")%><%=label_tag(:search_type_receipt_id, "Payment Amount")%></li>
-			<li><%=radio_button_tag(:search_type, "payment_date")%><%=label_tag(:search_type_receipt_id, "Payment Date Range (MM/DD/YYYY-MM/DD/YYYY)")%></li>
+			<li><%=radio_button_tag(:search_type, "payment_date")%><%=label_tag(:search_type_receipt_id, "Payment Date (MM/DD/YYYY-MM/DD/YYYY)")%></li>
+			<li><%=radio_button_tag(:search_type, "payment_date_actual")%><%=label_tag(:search_type_receipt_id, "Payment Date (Actual) (MM/DD/YYYY-MM/DD/YYYY)")%></li>
 		</ul>
 	</div>
 

@@ -3,7 +3,7 @@
 		<tr><td>First name:</td> <td><%= f.text_field :first_name %></td></tr>
 		<tr><td>Middle initial:</td> <td><%= f.text_field :middle_initial %></td></tr>
 		<tr><td>Last name:</td> <td><%= f.text_field :last_name %></td></tr>
-		
+
 		<%if @student.sex == "Male"%>
 			<tr><td>Male/Female:</td> <td><%= f.select :sex, options_for_select([["Male", "Male"], ["Female", "Female"]], "Male") %></td></tr>
 		<%elsif @student.sex == "Female"%>
@@ -11,7 +11,7 @@
 		<%elsif @student.sex == "Unspecified"%>
 			<tr><td>Male/Female:</td> <td><%= f.select :sex, options_for_select([["Unspecified", "Unspecified"], ["Male", "Male"], ["Female", "Female"]], "Unspecified") %></td></tr>
 		<%end%>
-		
+
 		<tr><td>Street address:</td> <td><%= f.text_field :street_address %></td></tr>
 		<tr><td>City:</td> <td><%= f.text_field :city %></td></tr>
 		<tr><td>State:</td> <td><%= f.text_field :state %></td></tr>
@@ -20,7 +20,7 @@
 		<tr><td>Phone 2:</td> <td><%= f.text_field :phone_2 %></td></tr>
 		<tr><td>DOB (YYYY-MM-DD):</td> <td><%= f.text_field :dob %></td></tr>
 		<tr class = "blankTableRowSpacer"></tr>
-		
+
 		<tr><td>Start date (YYYY-MM-DD):</td> <td><%= f.text_field :start_date %></td></tr>
 		<tr><td>Finish date (YYYY-MM-DD):</td> <td><%= f.text_field :finish_date %></td></tr>
 		<tr><td>Agreement #:</td> <td><%= f.text_field :agreement_number %></td></tr>
@@ -30,16 +30,16 @@
 		<tr><td>Class #:</td> <td><%= f.text_field :class_number %></td></tr>
 		<tr><td>Electronically filed (Y/N):</td> <td><%= f.check_box :electronically_filed %></td></tr>
 		<tr class = "blankTableRowSpacer"></tr>
-		
+
 		<tr><td>Program cost ($0.00):</td> <td>$<%= f.text_field :program_cost %></td></tr>
 		<tr class = "blankTableRowSpacer"></tr>
-		
+
 		<tr><td>Behind the wheel instructor:</td> <td><%= f.text_field :behind_the_wheel_instructor %></td></tr>
 		<tr><td>Date inst. assigned (YYYY-MM-DD):</td> <td><%= f.text_field :date_instructor_assigned %></td></tr>
 		<tr><td>School attend:</td> <td><%= f.text_field :school_attend %></td></tr>
 		<tr><td>Classroom location:</td> <td><%= f.text_field :classroom_location %></td></tr>
 		<tr><td>Classroom instructor:</td> <td><%= f.text_field :classroom_instructor %></td></tr>
-		
+
 		<%if @student.student_type == "Classroom only"%>
 			<tr><td>Type:</td> <td><%= f.select :student_type, options_for_select([["Classroom only", "Classroom only"], ["Behind the wheel", "Behind the wheel"], ["Both", "Both"]], "Classroom only") %></td></tr>
 		<%elsif @student.student_type == "Behind the wheel"%>
@@ -50,7 +50,7 @@
 			<tr><td>Type:</td> <td><%= f.select :student_type, options_for_select([["Classroom only", "Classroom only"], ["Behind the wheel", "Behind the wheel"], ["Both", "Both"]], "Both") %></td></tr>
 		<%end%>
 		<tr class = "blankTableRowSpacer"></tr>
-		
+
 		<tr><td>Notes:</td> <td><%= f.text_area :notes %></td></tr>
 
 		<tr><td></td> <td><%= f.submit "Update student" %></td></tr>

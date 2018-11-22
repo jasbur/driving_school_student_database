@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+	http_basic_authenticate_with name: "admin", password: "jyx01xde", only: [:search, :list_payments]
 
 	def index
 
@@ -86,7 +87,7 @@ class PaymentsController < ApplicationController
       @payments = Payment.find(:all)
     else
       if @search_type == "receipt_number"
-        @payments = Payment.find(:all, :conditions => [ "receipt_number = ?", "#{@query}" ])
+        @payments = Payment.find(:all, :conditions => [ "receipt_number LIKE ?", "%#{@query}%" ])
       elsif @search_type == "receipt_amount"
         @payments = Payment.find(:all, :conditions => [ "amount = ?", "#{@query}" ])
 			elsif @search_type == "payment_date"
@@ -94,6 +95,11 @@ class PaymentsController < ApplicationController
 				begin_date = Student.parse_american_date(query_dates[0])
 				end_date = Student.parse_american_date(query_dates[1])
         @payments = Payment.find(:all, :conditions => [ "payment_date >= ? AND payment_date < ?", "#{begin_date.to_datetime}", "#{(end_date.to_datetime + 1.day)}" ])
+			elsif @search_type == "payment_date_actual"
+				query_dates = @query.split('-')
+				begin_date = Student.parse_american_date(query_dates[0])
+				end_date = Student.parse_american_date(query_dates[1])
+        @payments = Payment.find(:all, :conditions => [ "created_at >= ? AND payment_date < ?", "#{begin_date.to_datetime}", "#{(end_date.to_datetime + 1.day)}" ])
 			end
     end
   end

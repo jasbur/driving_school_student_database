@@ -10,9 +10,9 @@ div#classLabelsContainer ul{
 
 div#classLabelsContainer{
 	border: 1px solid #fff;
-	width: 700px;
+	width: 735px;
 	height: 913px;
-	padding: 7px 0px 0px 0px;
+	padding: 0px;
 	text-align: center;
 }
 
@@ -22,9 +22,9 @@ div#classLabelsContainer table{
 
 div#classLabelsContainer td{
 	border: 1px solid #fff;
-	width: 263px;
+	width: 243px;
 	height: 90px;
-	padding: 13px 0px 0px 0px;
+	padding: 24px 0px 0px 5px;
 }
 
 .classLabelsSpacerRow{

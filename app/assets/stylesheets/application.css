@@ -36,6 +36,10 @@ body td{
 	padding: 0px 23px 0px 0px;
 }
 
+body th{
+	text-align: left;
+}
+
 input{
 	border-radius: 6px;
 	min-width: 200px;
@@ -103,12 +107,23 @@ div#mainContent {
 	border: 13px solid #ffffff;
 }
 
-.indexNavigationLinks {
+div#indexNavigationLinks {
 	font-size: 1.8em;
 }
 
-.indexNavigationLinks li {
+div#indexNavigationLinks li {
 	margin: 0px 0px 37px 0px;
+}
+
+div#indexAdminConatainer {
+    text-align: right;
+    margin: 90px 0 0 0;
+    padding: 0 50px 0 0;
+    font-size: 23px;
+}
+
+div#indexAdminConatainer h1 {
+    font-size: 29px;
 }
 
 .blankTableRowSpacer{
@@ -166,6 +181,10 @@ div#paymentModButtons {
 
 .listStudentsTableRowSpacer {
 	height: 11px;
+}
+
+.tableRowHighlighted{
+	background-color: #615dd6;
 }
 
 .tableColumnCurrency{

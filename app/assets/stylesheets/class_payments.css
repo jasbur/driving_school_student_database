@@ -46,3 +46,7 @@ div#classPaymentsPrintContainer table {
 .bottomTotalRowSpacer{
 	height: 13px;
 }
+
+.listPaymentsTableRowSpacer{
+	height: 22px;
+}

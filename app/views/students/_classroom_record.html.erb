@@ -1,91 +1,79 @@
 <div id="officeRecordContainer">
-	
+
 	<div id="officeRecordHeader">
 		<h1>STUDENT'S OFFICIAL OFFICE RECORD</h1>
-		
+
 		<h3>FOR THE STATE OF WISCONSIN</h3>
 		<h3>AND THE MOTOR VEHICLE DEPARTMENT</h3>
-		
+
 		<h2>CLASSROOM</h2>
 	</div>
-	
+
+	<div id="printClassInstructorData">
+		<table>
+				<tr>
+					<td><%= @student.class_number %></td> <td><%= @student.classroom_instructor %></td>
+				</tr>
+		</table>
+	</div>
+
 	<div id="printClassInstructorArea">
 		<table>
 			<tr><td>Class</td> <td class="printInstructorLabelRight">Instructor</td></tr>
 		</table>
 	</div>
-	
+
 	<div id="printAgreementSection">
 		<table>
 			<tr><td>Agreement#</td> <td><%=@student.agreement_number%></td></tr>
 		</table>
 	</div>
-	
+
 	<div id="printStudentInformationArea">
 		<table>
 			<tr><td class="printStudentInformationAreaLeft"><%=@student.first_name%> <%=@student.middle_initial%> <%=@student.last_name%></td> <td><%=@student.phone_1%> <%=@student.phone_2%></td></tr>
-			<tr><td><%=@student.street_address%></td> <td><%=@student.city%> <%=@student.zip_code%></td></tr>
+			<tr><td><%=@student.street_address%></td> <td><%=@student.city%>, <%=@student.state%> <%=@student.zip_code%></td></tr>
 			<tr><td></td> <td><%=if @student.dob; @student.dob.strftime("%m/%d/%Y"); end%></td></tr>
 			<tr><td></td> <td><%=@student.school_attend%></td></tr>
 			<tr><td><%=@student.sex.upcase%></td> <td></td></tr>
 		</table>
 	</div>
-	
-	<div id="classroomPrintRightOptionsColumn">
+
+	<div id="classroomPrintBottomChartArea">
 		<table>
-			<tr><th>OTHER</th></tr>
-			<tr><td class="classroomPrintRightOptionsColumnEmptyBox"></td></tr>
-			<tr><td class="classroomPrintRightOptionsColumnSpacer"></td></tr>
-			
-			<tr><th>SAMPLE TEST</th></tr>
-			<tr><td class="classroomPrintRightOptionsColumnEmptyBox"></td></tr>
-			<tr><td class="classroomPrintRightOptionsColumnSpacer"></td></tr>
-			
-			<tr><th>M.M. TEST</th></tr>
-			<tr><td class="classroomPrintRightOptionsColumnEmptyBox"></td></tr>
-			<tr><td class="classroomPrintRightOptionsColumnSpacer"></td></tr>
-			
-			<tr><th>S.B. SURVEY</th></tr>
-			<tr><td class="classroomPrintRightOptionsColumnEmptyBox"></td></tr>
-			<tr><td class="classroomPrintRightOptionsColumnSpacer"></td></tr>
-			
-			<tr><th>2ND WK. QUIZ</th></tr>
-			<tr><td class="classroomPrintRightOptionsColumnEmptyBox"></td></tr>
-			<tr><td class="classroomPrintRightOptionsColumnSpacer"></td></tr>
-			
-			<tr><th>BASIC C.C.</th></tr>
-			<tr><td class="classroomPrintRightOptionsColumnEmptyBox"></td></tr>
-			<tr><td class="classroomPrintRightOptionsColumnSpacer"></td></tr>
-			
-			<tr><th>PROJECT</th></tr>
-			<tr><td class="classroomPrintRightOptionsColumnEmptyBox"></td></tr>
-			<tr><td class="classroomPrintRightOptionsColumnSpacer"></td></tr>
-			
-			<tr><th>FINAL</th></tr>
-			<tr><td class="classroomPrintRightOptionsColumnEmptyBox"></td></tr>
-			<tr><td class="classroomPrintRightOptionsColumnSpacer"></td></tr>
+			<tr><th class="classroomPrintChartColumnHeader">Date</th>
+				<th class="classroomPrintChartColumnHeader">Lesson Type</th>
+				<th class="classroomPrintChartColumnHeader">Absent (if checked)</th>
+				<th class="classroomPrintChartColumnHeader">Homework Assigned (if checked)</th>
+				<th class="classroomPrintChartColumnHeader">Homework Returned (if checked)</th>
+				<th class="classroomPrintChartColumnHeader">Lesson Hours</th>
+				<th class="classroomPrintChartColumnHeader">Instructor Name</th>
+				<th class="classroomPrintChartColumnHeader">Instructor #</th>
+			</tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 1</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 2</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 3</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 4</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 5</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 6</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 7</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 8</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 9</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 10</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 11</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 12</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 13</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 14</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
+			<tr><td class="classroomPrintLeftMostColumn"></td> <td>Classroom Session 15</td> <td></td> <td></td> <td></td> <td>2</td> <td></td> <td></td> </tr>
 		</table>
+
+		<div id="classroomTotalsArea">
+			<table>
+				<tr><td>Total Lesson Hours: <span class="classroomTotalsAreaBuffer">30</span></td> <td>Sample Test<span class="classroomTotalsAreaBuffer">______</span></td></tr>
+				<tr><td>Knowledge Test Score:<span class="classroomTotalsAreaBuffer">/50</span></td> <td>Basic C.C.<span class="classroomTotalsAreaBuffer">______</span></td></tr>
+				<tr><td>Highway Signs Test Score:<span class="classroomTotalsAreaBuffer">/15</span></td> <td>Final<span class="classroomTotalsAreaBuffer">______</span></td></tr>
+			</table>
+		</div>
 	</div>
-	
-	<div id="printBottomChartArea">
-		<table>
-			<tr><th class="printUpperLeftTableHeader"></th> <th class="classroomPrintChartColumnHeader">DATE</th> <th class="classroomPrintChartColumnHeader">CLASS</th> <th class="classroomPrintChartColumnHeader">HOME WORK</th> <th class="classroomPrintChartColumnHeader">H.W. RETURN</th> <th class="classroomPrintChartColumnHeader">RECPT. #</th> <th class="classroomPrintChartColumnHeader">AMT.</th> <th class="classroomPrintChartColumnHeader">INST.</th></tr>
-			<tr><td class="classroomPrintLeftMostColumn">1</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">2</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">3</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">4</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">5</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">6</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">7</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">8</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">9</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">10</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">11</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">12</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">13</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">14</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-			<tr><td class="classroomPrintLeftMostColumn">15</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>	
-		</table>
-	</div>
-	
+
 </div>
